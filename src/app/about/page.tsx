@@ -21,7 +21,7 @@ const About = () => {
         />
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/80" />
 
         {/* Header */}
         <header className="absolute top-6 left-6 lg:top-12 lg:left-12 z-20">
@@ -30,19 +30,19 @@ const About = () => {
 
         {/* Hero Content */}
         <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="text-center space-y-8 px-6">
+          <div className="text-center space-y-5 sm:space-y-8 px-4 sm:px-6">
             {/* Japanese Characters */}
-            <div className="font-yuji-mai text-white text-4xl lg:text-6xl opacity-60">
+            <div className="font-yuji-mai text-white text-3xl sm:text-4xl lg:text-6xl opacity-70 tracking-[0.25em]">
               友達の物語
             </div>
 
             {/* Main Title */}
-            <h1 className="font-heading-xlarge text-white text-6xl lg:text-8xl tracking-wider leading-none">
+            <h1 className="font-heading-h1 text-white text-[clamp(2.5rem,8vw,4.5rem)] sm:text-6xl lg:text-8xl tracking-[0.14em] sm:tracking-[0.28em] leading-tight sm:leading-[0.95] px-2 text-balance uppercase">
               OUR STORY
             </h1>
 
             {/* Subtitle */}
-            <p className="font-text-meta text-white/80 text-lg lg:text-xl tracking-wider max-w-2xl mx-auto">
+            <p className="font-text-meta text-white/80 text-base sm:text-lg lg:text-xl tracking-[0.22em] sm:tracking-[0.32em] leading-relaxed max-w-2xl mx-auto text-balance">
               Where tradition meets innovation in the heart of every roll
             </p>
 
@@ -121,7 +121,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
               <div className="relative">
-                <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
+                <div className="relative w-full aspect-4/3 overflow-hidden rounded-2xl">
                   <Image
                     src="/images/sushi/reservation-card.jpg"
                     alt="Master Chef Tanaka"
@@ -131,7 +131,7 @@ const About = () => {
                     priority
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent rounded-2xl"></div>
                 <div className="absolute bottom-6 left-6 text-white">
                   <h4 className="font-heading-h4 text-xl tracking-wider">
                     MASTER CHEF TANAKA
@@ -153,7 +153,7 @@ const About = () => {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <ChefHat className="w-6 h-6 text-backgroundprimary mt-1 flex-shrink-0" />
+                  <ChefHat className="w-6 h-6 text-backgroundprimary mt-1 shrink-0" />
                   <div>
                     <h4 className="font-heading-h6 text-textdefault tracking-wider mb-2">
                       TOKYO TRAINED
@@ -166,7 +166,7 @@ const About = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <Award className="w-6 h-6 text-backgroundprimary mt-1 flex-shrink-0" />
+                  <Award className="w-6 h-6 text-backgroundprimary mt-1 shrink-0" />
                   <div>
                     <h4 className="font-heading-h6 text-textdefault tracking-wider mb-2">
                       AWARD WINNING
@@ -179,7 +179,7 @@ const About = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <Heart className="w-6 h-6 text-backgroundprimary mt-1 flex-shrink-0" />
+                  <Heart className="w-6 h-6 text-backgroundprimary mt-1 shrink-0" />
                   <div>
                     <h4 className="font-heading-h6 text-textdefault tracking-wider mb-2">
                       PASSIONATE ARTISAN
@@ -231,7 +231,7 @@ const About = () => {
                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 text-white">
                   <h4 className="font-heading-h6 tracking-wider">
                     FRESH DAILY
@@ -249,7 +249,7 @@ const About = () => {
                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 text-white">
                   <h4 className="font-heading-h6 tracking-wider">
                     ARTFUL DESIGN
@@ -267,7 +267,7 @@ const About = () => {
                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 text-white">
                   <h4 className="font-heading-h6 tracking-wider">
                     ELEGANT SPACE
@@ -285,7 +285,7 @@ const About = () => {
                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 text-white">
                   <h4 className="font-heading-h6 tracking-wider">
                     PREMIUM SERVICE
@@ -298,7 +298,7 @@ const About = () => {
       </section>
 
       {/* Visit Us Section */}
-      <section className="py-24 bg-backgroundmuted">
+      <section className="py-16 bg-backgroundmuted">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-heading-h1 text-textdefault text-4xl lg:text-5xl tracking-wider mb-8">
             VISIT TOMODACHI
@@ -342,7 +342,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-2">
             <p className="font-text-meta text-textmuted text-lg leading-relaxed max-w-2xl mx-auto">
               Join us for an unforgettable culinary journey where every bite
               tells the story of our dedication to excellence, tradition, and

@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N:wght@400&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
-@import url('https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N:wght@400&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -248,15 +248,6 @@
   overflow: hidden;
 }
 
-/* Hide scrollbar utility */
-.scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari and Opera */
-}
 }
 /* Scrollbar styling for modals */
 .custom-scrollbar {

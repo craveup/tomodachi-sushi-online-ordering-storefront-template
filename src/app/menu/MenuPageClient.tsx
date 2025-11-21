@@ -81,21 +81,41 @@ const MenuPageClient = () => {
     }
   }, [menuCategories, activeSection]);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = useCallback((sectionId: string) => {
     const section = sectionRefs.current[sectionId];
     const container = scrollContainerRef.current;
-    if (section && container) {
+
+    if (!section) return;
+
+    const canUseContainer =
+      container && container.scrollHeight - container.clientHeight > 8;
+
+    if (canUseContainer && container) {
       const sectionTop = section.offsetTop - container.offsetTop;
-      container.scrollTo({ top: sectionTop - 20, behavior: "smooth" });
+      const offset = Math.max(sectionTop - 20, 0);
+
+      if (typeof container.scrollTo === "function") {
+        container.scrollTo({ top: offset, behavior: "smooth" });
+      } else {
+        container.scrollTop = offset;
+      }
+      return;
     }
-  };
+
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const container = scrollContainerRef.current;
-      if (!container) return;
-      const scrollTop = container.scrollTop;
+    const container = scrollContainerRef.current;
+    if (!container) return;
 
+    const isScrollable = container.scrollHeight - container.clientHeight > 8;
+    if (!isScrollable) {
+      return;
+    }
+
+    const handleScroll = () => {
+      const scrollTop = container.scrollTop;
       let current = menuCategories[0]?.id ?? "";
       let closest = Infinity;
 
@@ -114,13 +134,18 @@ const MenuPageClient = () => {
       setActiveSection(current);
     };
 
-    const container = scrollContainerRef.current;
-    if (container) {
-      container.addEventListener("scroll", handleScroll);
-      handleScroll();
-      return () => container.removeEventListener("scroll", handleScroll);
-    }
+    container.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => container.removeEventListener("scroll", handleScroll);
   }, [menuCategories]);
+
+  const handleCategorySelect = useCallback(
+    (categoryId: string) => {
+      setActiveSection(categoryId);
+      scrollToSection(categoryId);
+    },
+    [scrollToSection]
+  );
 
   const isInitialLoading = menusLoading && menus.length === 0;
   const hasMenuData = Boolean(menu && menuCategories.length);
@@ -128,11 +153,11 @@ const MenuPageClient = () => {
   return (
     <>
       <div className="flex flex-col items-start relative w-full lg:flex-1 lg:grow h-auto lg:h-full lg:min-h-0">
-        <Card className="relative flex h-full w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-borderdefault bg-backgrounddefault shadow-lg">
-          <CardContent className="relative flex h-full flex-col p-0">
+        <Card className="relative flex w-full max-w-4xl flex-col overflow-visible rounded-2xl border border-borderdefault bg-backgrounddefault shadow-lg lg:h-full lg:overflow-hidden">
+          <CardContent className="relative flex flex-col p-0 lg:h-full">
             <div
               ref={scrollContainerRef}
-              className="relative flex h-full flex-col overflow-y-auto"
+              className="relative flex flex-col lg:h-full lg:overflow-y-auto"
               style={{ scrollbarGutter: "stable both-edges" }}
             >
               {isInitialLoading ? (
@@ -152,12 +177,14 @@ const MenuPageClient = () => {
                   )}
 
                   {menuCategories.length > 0 && (
-                    <div className="sticky top-0 z-10 border-y border-borderdefault/40 bg-backgrounddefault/95 px-4 py-3 sm:px-6 lg:px-8 backdrop-blur-sm supports-backdrop-filter:bg-backgrounddefault/80">
+                    <div className="sticky top-0 z-20 border-y border-borderdefault/40 bg-backgrounddefault/95 px-4 py-3 sm:px-6 lg:px-8 backdrop-blur-sm supports-backdrop-filter:bg-backgrounddefault/80 shadow-[0_6px_18px_rgba(0,0,0,0.08)] dark:shadow-[0_6px_18px_rgba(0,0,0,0.45)]">
                       <div className="flex flex-wrap items-center justify-center gap-2">
                         {menuCategories.map((category) => (
                           <button
+                            type="button"
                             key={category.id}
-                            onClick={() => scrollToSection(category.id)}
+                            onClick={() => handleCategorySelect(category.id)}
+                            aria-pressed={activeSection === category.id}
                             className={`px-3 py-2 inline-flex items-center justify-center gap-2 rounded-lg border border-solid transition-colors cursor-pointer min-h-10 ${
                               activeSection === category.id
                                 ? "border-backgroundprimary bg-backgroundprimary text-textinverse"

@@ -97,7 +97,7 @@ export default function ReservationPage() {
   return (
     <div className="min-h-screen bg-backgrounddefault">
       {/* Hero Section */}
-      <section className="relative h-[60vh] overflow-hidden">
+      <section className="relative h-screen overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -107,7 +107,7 @@ export default function ReservationPage() {
         />
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/80" />
 
         {/* Header */}
         <header className="absolute top-6 left-6 lg:top-12 lg:left-12 z-20">
@@ -116,21 +116,28 @@ export default function ReservationPage() {
 
         {/* Hero Content */}
         <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="text-center space-y-6 px-6">
+          <div className="text-center space-y-5 sm:space-y-8 px-4 sm:px-6">
             {/* Japanese Characters */}
-            <div className="font-yuji-mai text-white text-3xl lg:text-5xl opacity-60">
+            <div className="font-yuji-mai text-white text-3xl sm:text-4xl lg:text-5xl opacity-70 tracking-[0.25em]">
               予約
             </div>
 
             {/* Main Title */}
-            <h1 className="font-heading-xlarge text-white text-5xl lg:text-7xl tracking-wider leading-none">
+            <h1 className="font-heading-h1 text-white text-[clamp(2.5rem,8vw,4.5rem)] sm:text-6xl lg:text-8xl tracking-[0.14em] sm:tracking-[0.26em] leading-tight sm:leading-[0.95] px-2 text-balance uppercase">
               RESERVATIONS
             </h1>
 
             {/* Subtitle */}
-            <p className="font-text-meta text-white/80 text-lg lg:text-xl tracking-wider max-w-2xl mx-auto">
+            <p className="font-text-meta text-white/80 text-base sm:text-lg lg:text-xl tracking-[0.2em] sm:tracking-[0.3em] leading-relaxed max-w-2xl mx-auto">
               Book your table for an unforgettable sushi experience
             </p>
+
+            {/* Scroll Indicator */}
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+              <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center">
+                <div className="w-1 h-3 bg-white/40 rounded-full mt-2 animate-pulse"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

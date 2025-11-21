@@ -76,9 +76,7 @@ export function useOrderingSession(
     }
 
     init();
-
-  
-  }, []);
+  }, [locationId, cartId, setIsLoading, setCartIdState]);
 
   return { cartId, isLoading, error, orderingError };
 }
