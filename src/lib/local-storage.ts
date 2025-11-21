@@ -40,20 +40,6 @@ export function removeCartCartId(
   window.localStorage.removeItem(buildCartKey(locationId, fulfillmentMethod));
 }
 
-export function clearCartIdsForLocation(locationId: string) {
-  if (typeof window === "undefined") {
-    return;
-  }
-
-  const prefix = `${CART_KEY_PREFIX}${normalizeLocation(locationId)}:`;
-  for (let idx = window.localStorage.length - 1; idx >= 0; idx -= 1) {
-    const key = window.localStorage.key(idx);
-    if (key && key.startsWith(prefix)) {
-      window.localStorage.removeItem(key);
-    }
-  }
-}
-
 // AUTH STORAGE
 const keyName = "authToken";
 
@@ -63,16 +49,4 @@ export function getAuthToken() {
   }
 
   return "";
-}
-
-export function setAuthToken(token: string) {
-  if (typeof window !== "undefined") {
-    return window.localStorage.setItem(keyName, token);
-  }
-}
-
-export function deleteAuthToken() {
-  if (typeof window !== "undefined") {
-    return window.localStorage.removeItem(keyName);
-  }
 }

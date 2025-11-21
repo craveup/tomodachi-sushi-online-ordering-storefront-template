@@ -10,8 +10,8 @@ function MenuPage() {
       {/* Hero */}
       <div className="relative w-full lg:flex-1 lg:grow h-[40vh] sm:h-[50vh] lg:h-full bg-black rounded-2xl overflow-hidden mb-4 lg:mb-0 lg:mr-4">
         <div className="relative w-full h-full bg-[url(/images/sushi/hero-background.png)] bg-cover bg-center">
-          <div className="absolute w-full h-[60%] lg:h-[381px] bottom-0 left-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(0,0,0,1)_100%)]">
-            <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-4 sm:left-8 lg:left-16 font-heading-large text-textdefault text-4xl sm:text-6xl lg:text-[112px] tracking-[1px] sm:tracking-[1.5px] lg:tracking-[2px] leading-none">
+          <div className="absolute w-full h-[60%] lg:h-[381px] bottom-0 left-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0.92)_65%,rgba(0,0,0,1)_100%)]">
+            <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-4 sm:left-8 lg:left-16 font-heading-large text-white dark:text-textdefault text-[clamp(2.5rem,7vw,4.5rem)] sm:text-6xl lg:text-[112px] tracking-[1px] sm:tracking-[1.5px] lg:tracking-[2px] leading-tight drop-shadow-[0_12px_35px_rgba(0,0,0,0.65)]">
               MENU
             </div>
           </div>

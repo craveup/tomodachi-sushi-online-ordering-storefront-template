@@ -78,6 +78,26 @@ export const metadata: Metadata = {
   title: "Tomodachi Sushi - Authentic Japanese Cuisine",
   description:
     "Experience authentic Japanese sushi and rolls at Tomodachi Sushi. Fresh ingredients, traditional flavors, and a modern dining experience.",
+  openGraph: {
+    title: "Tomodachi Sushi - Authentic Japanese Cuisine",
+    description:
+      "Experience authentic Japanese sushi and rolls at Tomodachi Sushi. Fresh ingredients, traditional flavors, and a modern dining experience.",
+    images: [
+      {
+        url: "/preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Preview of the Tomodachi Sushi ordering experience",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tomodachi Sushi - Authentic Japanese Cuisine",
+    description:
+      "Experience authentic Japanese sushi and rolls at Tomodachi Sushi. Fresh ingredients, traditional flavors, and a modern dining experience.",
+    images: ["/preview.png"],
+  },
 };
 
 export default function RootLayout({

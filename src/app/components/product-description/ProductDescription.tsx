@@ -59,7 +59,7 @@ const ProductDescription = ({
               <Image
                 src={imageURL}
                 className="object-cover"
-                alt="product image"
+                alt={name}
                 placeholder="blur"
                 fill
                 blurDataURL={imagePlaceholder}
