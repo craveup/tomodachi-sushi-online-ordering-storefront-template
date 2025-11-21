@@ -40,7 +40,7 @@ export function ProductDescriptionScreen({
         )}
       >
         <ErrorMessage message="Failed to load data. Please try again later." />
-        <Button onClick={handleRetry} className="mt-8 !w-1/2">
+        <Button onClick={handleRetry} className="mt-8 w-1/2!">
           Retry
         </Button>
       </div>

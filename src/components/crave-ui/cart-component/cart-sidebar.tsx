@@ -548,9 +548,9 @@ function CartSidebarContent({
                         >
                           {showRecSkeleton ? (
                             // Skeleton card--ItemVertical layout
-                            <Card className="gap-0 overflow-hidden p-0 animate-pulse">
+                            <Card className="flex h-full flex-col gap-0 overflow-hidden p-0 animate-pulse">
                               <div className="relative aspect-4/3 w-full bg-muted" />
-                              <CardHeader className="p-4">
+                              <CardHeader className="min-h-24 p-4">
                                 <div className="h-4 bg-muted rounded w-3/4 mb-2" />
                                 <div className="h-4 bg-muted rounded w-1/3" />
                               </CardHeader>
@@ -558,7 +558,7 @@ function CartSidebarContent({
                           ) : (
                             // ItemVertical style
                             <Card
-                              className="gap-0 overflow-hidden p-0 transition-all hover:shadow-md bg-background"
+                              className="flex h-full flex-col gap-0 overflow-hidden p-0 transition-all hover:shadow-md bg-background"
                               onClick={() =>
                                 item && setProductIdToOpen(item.id)
                               }
@@ -575,11 +575,11 @@ function CartSidebarContent({
                                 />
                               </div>
 
-                              <CardHeader className="p-4">
+                              <CardHeader className="flex min-h-28 flex-col justify-between gap-3 p-4">
                                 <CardTitle className="text-sm line-clamp-2">
                                   {item!.name}
                                 </CardTitle>
-                                <CardDescription className="font-semibold">
+                                <CardDescription className="font-semibold mt-auto">
                                   {currency(item!.price)}
                                 </CardDescription>
                               </CardHeader>

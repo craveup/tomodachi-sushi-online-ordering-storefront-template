@@ -134,18 +134,6 @@ export function formatRelativeTime(
   return rtf.format(0, 'second');
 }
 
-// Format restaurant operating hours
-export function formatOperatingHours(
-  openTime: string,
-  closeTime: string,
-  locale: string
-): string {
-  const open = formatTime(`2024-01-01T${openTime}`, locale);
-  const close = formatTime(`2024-01-01T${closeTime}`, locale);
-  
-  return `${open} - ${close}`;
-}
-
 // Format distance with appropriate units
 export function formatDistance(
   distanceInMeters: number,
@@ -166,51 +154,4 @@ export function formatDistance(
     const km = distanceInMeters / 1000;
     return `${formatNumber(Number(km.toFixed(1)), locale)} km`;
   }
-}
-
-// Format phone numbers
-export function formatPhoneNumber(
-  phone: string,
-  locale: string,
-  countryCode: string = 'US'
-): string {
-  // Remove all non-numeric characters
-  const cleaned = phone.replace(/\D/g, '');
-  
-  // Format based on country
-  switch (countryCode) {
-    case 'US':
-      if (cleaned.length === 10) {
-        return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)}-${cleaned.slice(6)}`;
-      }
-      break;
-    case 'UK':
-      if (cleaned.length === 11 && cleaned.startsWith('0')) {
-        return `${cleaned.slice(0, 5)} ${cleaned.slice(5, 8)} ${cleaned.slice(8)}`;
-      }
-      break;
-    // Add more country-specific formatting as needed
-  }
-  
-  return phone; // Return original if no formatting rule applies
-}
-
-// Get text direction for locale
-export function getTextDirection(locale: string): 'ltr' | 'rtl' {
-  const rtlLocales = ['ar', 'he', 'fa', 'ur'];
-  return rtlLocales.includes(locale.split('-')[0]) ? 'rtl' : 'ltr';
-}
-
-// Format file size
-export function formatFileSize(bytes: number, locale: string): string {
-  const units = ['B', 'KB', 'MB', 'GB'];
-  let size = bytes;
-  let unitIndex = 0;
-  
-  while (size >= 1024 && unitIndex < units.length - 1) {
-    size /= 1024;
-    unitIndex++;
-  }
-  
-  return `${formatNumber(Number(size.toFixed(1)), locale)} ${units[unitIndex]}`;
 }
