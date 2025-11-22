@@ -115,4 +115,8 @@ NEXT_PUBLIC_LOCATION_ID=loc_xxx
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
 - [shadcn/ui Documentation](https://ui.shadcn.com/)
 
+## License
+
+Distributed under the [MIT License](LICENSE) © Crave Up Inc.
+
 Happy building, and enjoy launching your sushi storefront! 🍣
