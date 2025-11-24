@@ -1,149 +1,122 @@
-# Restaurant Ordering Application Template
+# Crave.js — Sushi Storefront Template
 
-This Next.js application serves as a starter template for building modern restaurant ordering and e-commerce experiences. It features a sophisticated theming system, CraveUp API integration for cart management and payments, and a customizable UI that can be adapted for any restaurant type. Currently showcasing **Leclerc Bakery** as an example implementation.
-
-## Project Setup
-
-To get started with this project, follow these steps:
-
-1. Clone the repository:
-
-```bash
-git clone --depth 1 https://github.com/your-org/tomodachi-sushi-template
-```
-
-2. Install dependencies:
-
-This project uses npm for package management. To install dependencies, execute the following command:
-
-```bash
-npm install
-```
-
-## Environment Setup
-
-Create a `.env.local` file in the root directory and configure the following environment variables:
-
-### Required Variables
-
-```env
-# CraveUp API Configuration
-CRAVEUP_API_KEY=your_server_side_api_key
-NEXT_PUBLIC_CRAVEUP_API_KEY=your_client_side_api_key
-CRAVEUP_API_BASE_URL=https://api.craveup.com
-NEXT_PUBLIC_LOCATION_ID=your_restaurant_location_id
-```
-
-### Getting Your API Keys
-
-> **Note:** A paid CraveUp subscription is required to use the API. For testing access, please reach out to [hello@craveup.com](mailto:hello@craveup.com) and we'll provision a test API account for you. On-demand sandbox API keys are coming soon.
-
-1. Sign up for a CraveUp account at [craveup.com](https://craveup.com)
-2. Navigate to your dashboard and access the API section
-3. Generate both server-side and client-side API keys
-4. Copy your restaurant's location ID from the locations page
-
-## Theme Configuration
-
-This template uses a powerful JSON-based theming system that allows you to customize the entire look and feel of your restaurant application.
-
-1. Navigate to `public/themes/` directory
-2. Create a new theme JSON file or modify the existing `leclerc-theme.json`
-3. Configure colors, typography, spacing, and animations to match your brand
-4. Update the theme reference in your application to load your custom theme
-
-Example theme structure:
-
-```json
-{
-  "colors": {
-    "primary": "#your-primary-color",
-    "secondary": "#your-secondary-color"
-  },
-  "typography": {
-    "fontFamily": "Your Font",
-    "headingSizes": {}
-  }
-}
-```
-
-## Running the Project
-
-After completing the setup steps, you can run the project using the following commands:
-
-### Development
-
-```bash
-npm run dev
-```
-
-The application will be available at [http://localhost:3000](http://localhost:3000)
-
-### Production Build
-
-```bash
-npm run build
-npm run start
-```
-
-### Linting
-
-```bash
-npm run lint
-```
+Tomodachi Sushi is a production-ready Crave.js storefront template built with Next.js 15, React 19, and Tailwind CSS. It ships with menu rendering, product detail dialogs, a mobile-friendly cart and checkout flow, and location-aware configuration so restaurants can launch online ordering experiences quickly on Vercel.
 
 ## Key Features
 
-- **Dynamic Theming System**: JSON-driven themes with CSS custom properties and dark mode support
-- **CraveUp API Integration**: Full cart management, payment processing, and order handling
-- **Multi-Provider Architecture**: Layered providers for theme, cart, and address management
-- **Responsive Design**: Mobile-first design with desktop enhancements
-- **Modern Tech Stack**: Built with Next.js 15, React 19, TypeScript, and Tailwind CSS
-- **Component Library**: Extensive UI component system using Shadcn/ui with Radix UI primitives
-- **State Management**: Hybrid API-driven state with localStorage fallback for offline functionality
+- **CraveUp Ordering** – Integrates the CraveUp storefront SDK for menu data, cart mutations, and checkout handoffs.
+- **Responsive Menu UX** – Sticky category tabs, scroll-linked sections, and product dialogs optimized for both desktop and mobile.
+- **Cart & Recommendations** – Full cart sidebar with quantity controls, suggestions carousel, and checkout CTA.
+- **Dark & Light Themes** – Brandable palettes defined in CSS custom properties with instant theme toggling.
+- **Accessible Components** – Built on shadcn/ui + Radix primitives with Drawer/Dialog parity and keyboard support.
+- **Vercel Ready** – Zero-config deployment; includes `pnpm` scripts for dev, build, lint, and production start.
+
+## Demo
+
+| Hero (Light) | Hero (Dark) |
+| --- | --- |
+| ![Hero Light](public/screenshots/hero+navbar-light.png) | ![Hero Dark](public/screenshots/hero+navbar-dark.png) |
+
+| Menu Grid | Product Drawer |
+| --- | --- |
+| ![Menu Page](public/screenshots/menu%20page.png) | ![Product Drawer](public/screenshots/product%20detail%20drawer.png) |
+
+| Cart & Recommendations | Light/Dark Scroll GIF | Menu Scroll GIF |
+| --- | --- | --- |
+| ![Cart Sidebar](public/screenshots/cart%20sidebar.png) | ![Hero GIF](public/screenshots/hero-gif.gif) | ![Menu Scroll GIF](public/screenshots/menu%20scrolling-gif.gif) |
+
+## Tech Stack
+
+- [Next.js 15 (App Router)](https://nextjs.org/)
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/) with custom tokens
+- [shadcn/ui](https://ui.shadcn.com/) + Radix UI primitives
+- [CraveUp Storefront SDK](https://docs.craveup.com/)
+
+## Getting Started
+
+1. **Clone the repo**
+   ```bash
+   git clone --depth 1 https://github.com/your-org/tomodachi-sushi-template
+   cd tomodachi-sushi-template
+   ```
+2. **Install dependencies**
+   ```bash
+   pnpm install
+   ```
+3. **Configure environment variables** (see next section).
+4. **Run the dev server**
+   ```bash
+   pnpm dev
+   ```
+   Visit `http://localhost:3000` to explore the template.
+
+## Environment Variables
+
+Create a `.env.local` file with the following values from your CraveUp dashboard:
+
+```bash
+NEXT_PUBLIC_CRAVEUP_API_KEY=pk_xxx
+NEXT_PUBLIC_LOCATION_ID=loc_xxx
+```
+
+> Need keys? Email [hello@craveup.com](mailto:hello@craveup.com) for sandbox access.
+
+## Scripts
+
+| Command          | Description                         |
+| ---------------- | ----------------------------------- |
+| `pnpm dev`       | Run the local development server    |
+| `pnpm build`     | Create an optimized production build |
+| `pnpm start`     | Serve the production build locally  |
+| `pnpm lint`      | Run ESLint                          |
+
+## Customization Guide
+
+1. **Branding & Assets** – Replace imagery in `public/images/` with your restaurant photography.  
+2. **Colors & Typography** – Update CSS variables in `src/app/globals.css` to match your brand system.  
+3. **Menu Content** – Manage categories and items via the CraveUp dashboard; the template consumes live data via the storefront SDK.  
+4. **Components** – Extend UI patterns inside `src/components/crave-ui` and `src/app/components`.  
+5. **Deploy** – Push to Git and import the repo into Vercel. Set the same environment variables in your Vercel project and deploy.
 
 ## Project Structure
 
 ```
-├── src/
-│   ├── app/              # Next.js App Router pages and layouts
-│   ├── components/       # Reusable UI components
-│   │   ├── ui/          # Shadcn/ui base components
-│   │   └── crave-ui/    # Restaurant-specific components
-│   ├── lib/             # Utilities and API clients
-│   │   ├── api/         # CraveUp API integration
-│   │   └── theme-engine.ts  # Theme management system
-│   ├── hooks/           # Custom React hooks
-│   └── types/           # TypeScript type definitions
-├── public/
-│   ├── themes/          # Theme JSON configurations
-│   └── images/          # Static assets
+.
+├── src
+│   ├── app
+│   │   ├── page.tsx, about/, menu/, reservation/  # App Router pages
+│   │   ├── components/                            # Navbar, cards, layout primitives
+│   │   └── globals.css                            # Tailwind + theme tokens
+│   ├── components
+│   │   ├── crave-ui/cart-component/               # Cart sidebar, counter button, etc.
+│   │   └── ui/                                    # shadcn/ui wrappers
+│   ├── hooks/                                     # Cart + ordering session hooks
+│   ├── lib/                                       # API clients, utilities
+│   └── store/                                     # Zustand cart store
+├── public
+│   ├── images/                                    # Brand imagery
+│   └── screenshots/                               # README visuals
+└── README.md
 ```
 
-## Customization Guide
+## Deployment on Vercel
 
-1. **Update Branding**: Replace images in `public/images/` with your restaurant's photos
-2. **Configure Theme**: Create a custom theme JSON in `public/themes/`
-3. **Menu Setup**: Configure your menu items and categories through the CraveUp dashboard
-4. **Component Styling**: Customize components in `src/components/crave-ui/` to match your design
-5. **API Integration**: Update environment variables with your CraveUp credentials
+1. Commit and push your changes.  
+2. Go to [vercel.com/new](https://vercel.com/new) and import the repository.  
+3. Add the CraveUp environment variables to the project settings.  
+4. Click **Deploy** – Vercel builds the template and provides the live storefront URL.
 
-## Learn More
+## Support & Reference
 
-To learn more about the technologies used in this project:
+- [CraveUp Docs](https://docs.craveup.com/)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- [shadcn/ui Documentation](https://ui.shadcn.com/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API
-- [CraveUp API Documentation](https://docs.craveup.com) - API integration guide
-- [Shadcn/ui](https://ui.shadcn.com) - Component library documentation
-- [Tailwind CSS](https://tailwindcss.com/docs) - Utility-first CSS framework
+## License
 
-## Deploy on Vercel
+Distributed under the [MIT License](LICENSE) © Crave Up Inc.
 
-The easiest way to deploy this application is using the [Vercel Platform](https://vercel.com/new):
-
-1. Push your code to a Git repository
-2. Import your repository in Vercel
-3. Configure environment variables in the Vercel dashboard
-4. Deploy!
-
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more deployment options.
+Happy building, and enjoy launching your sushi storefront! 🍣
