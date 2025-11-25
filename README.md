@@ -13,17 +13,17 @@ Tomodachi Sushi is a production-ready Crave.js storefront template built with Ne
 
 ## Demo
 
-| Hero (Light) | Hero (Dark) |
-| --- | --- |
+| Hero (Light)                                            | Hero (Dark)                                           |
+| ------------------------------------------------------- | ----------------------------------------------------- |
 | ![Hero Light](public/screenshots/hero+navbar-light.png) | ![Hero Dark](public/screenshots/hero+navbar-dark.png) |
 
-| Menu Grid | Product Drawer |
-| --- | --- |
+| Menu Grid                                        | Product Drawer                                                      |
+| ------------------------------------------------ | ------------------------------------------------------------------- |
 | ![Menu Page](public/screenshots/menu%20page.png) | ![Product Drawer](public/screenshots/product%20detail%20drawer.png) |
 
-| Cart & Recommendations | Light/Dark Scroll GIF | Menu Scroll GIF |
-| --- | --- | --- |
-| ![Cart Sidebar](public/screenshots/cart%20sidebar.png) | ![Hero GIF](public/screenshots/hero-gif.gif) | ![Menu Scroll GIF](public/screenshots/menu%20scrolling-gif.gif) |
+| Cart & Recommendations                                 | Menu Scroll GIF |
+| ------------------------------------------------------ | --------------- |
+| ![Cart Sidebar](public/screenshots/cart%20sidebar.png) | ![Menu Scroll GIF](public/screenshots/menu%20scrolling-gif.gif) |
 
 ## Tech Stack
 
@@ -65,19 +65,19 @@ NEXT_PUBLIC_LOCATION_ID=loc_xxx
 
 ## Scripts
 
-| Command          | Description                         |
-| ---------------- | ----------------------------------- |
-| `pnpm dev`       | Run the local development server    |
-| `pnpm build`     | Create an optimized production build |
-| `pnpm start`     | Serve the production build locally  |
-| `pnpm lint`      | Run ESLint                          |
+| Command      | Description                          |
+| ------------ | ------------------------------------ |
+| `pnpm dev`   | Run the local development server     |
+| `pnpm build` | Create an optimized production build |
+| `pnpm start` | Serve the production build locally   |
+| `pnpm lint`  | Run ESLint                           |
 
 ## Customization Guide
 
-1. **Branding & Assets** – Replace imagery in `public/images/` with your restaurant photography.  
-2. **Colors & Typography** – Update CSS variables in `src/app/globals.css` to match your brand system.  
-3. **Menu Content** – Manage categories and items via the CraveUp dashboard; the template consumes live data via the storefront SDK.  
-4. **Components** – Extend UI patterns inside `src/components/crave-ui` and `src/app/components`.  
+1. **Branding & Assets** – Replace imagery in `public/images/` with your restaurant photography.
+2. **Colors & Typography** – Update CSS variables in `src/app/globals.css` to match your brand system.
+3. **Menu Content** – Manage categories and items via the CraveUp dashboard; the template consumes live data via the storefront SDK.
+4. **Components** – Extend UI patterns inside `src/components/crave-ui` and `src/app/components`.
 5. **Deploy** – Push to Git and import the repo into Vercel. Set the same environment variables in your Vercel project and deploy.
 
 ## Project Structure
@@ -103,9 +103,9 @@ NEXT_PUBLIC_LOCATION_ID=loc_xxx
 
 ## Deployment on Vercel
 
-1. Commit and push your changes.  
-2. Go to [vercel.com/new](https://vercel.com/new) and import the repository.  
-3. Add the CraveUp environment variables to the project settings.  
+1. Commit and push your changes.
+2. Go to [vercel.com/new](https://vercel.com/new) and import the repository.
+3. Add the CraveUp environment variables to the project settings.
 4. Click **Deploy** – Vercel builds the template and provides the live storefront URL.
 
 ## Support & Reference
