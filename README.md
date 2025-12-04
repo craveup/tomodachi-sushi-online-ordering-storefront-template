@@ -2,6 +2,8 @@
 
 Tomodachi Sushi is a production-ready Crave.js storefront template built with Next.js 15, React 19, and Tailwind CSS. It ships with menu rendering, product detail dialogs, a mobile-friendly cart and checkout flow, and location-aware configuration so restaurants can launch online ordering experiences quickly on Vercel.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/craveup/tomodachi-sushi-online-ordering-storefront-template&project-name=tomodachi-sushi-storefront&env=NEXT_PUBLIC_CRAVEUP_API_KEY,NEXT_PUBLIC_LOCATION_ID)
+
 ## Key Features
 
 - **CraveUp Ordering** – Integrates the CraveUp storefront SDK for menu data, cart mutations, and checkout handoffs.
